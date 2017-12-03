@@ -1,6 +1,9 @@
 package com.boot.controller;
 
 import com.boot.model.Shipwreck;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.metrics.CounterService;
+import org.springframework.boot.actuate.metrics.GaugeService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,8 +15,16 @@ import java.util.List;
 @RequestMapping("api/v1")
 public class ShipwreckController {
 
+    @Autowired
+    private CounterService counterService;
+
+    @Autowired
+    private GaugeService gaugeService;
+
     @RequestMapping(value="shipwrecks", method = RequestMethod.GET)
     public List<Shipwreck> list() {
+        counterService.increment("get.shipwrecks");
+        gaugeService.submit("get.last.shipwrecks", System.currentTimeMillis());
         return ShipwreckStub.list();
     }
 
