@@ -22,3 +22,25 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.svn
+*.iml
+
+
+.settings
+.project
+.classpath
+.externalToolBuilders
+audit.log
+logging.log
+maven-eclipse.xml
+target
+logging.*
+.idea/
+*/**/Gemfile.lock
+*/**/reports/*
+.DS_Store
