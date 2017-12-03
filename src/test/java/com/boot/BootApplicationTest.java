@@ -8,18 +8,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.Assert.assertSame;
 
+/**
+ * Created by jzl639 on 12/3/17.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class JustGifItApplicationTests {
+public class BootApplicationTest {
 
-//	@Test
-//	public void contextLoads() {
-//	}
-
-	@Test
-	public void testApp() {
-		HomeController hc = new HomeController();
-		String result = hc.home();
-		assertSame(result,"Welcome to the Spring Boot Session");
-	}
+    @Test
+    public void testApp() {
+        HomeController hc = new HomeController();
+        String result = hc.home();
+        assertSame(result,"Welcome to the Spring Boot Session");
+    }
 }

@@ -15,7 +15,7 @@ public class ShipwreckHealthIndicator implements HealthIndicator {
     public Health health() {
         try {
             RestTemplate restTemplate = new RestTemplate();
-            restTemplate.getForObject("http://www.amazon.com", String.class);
+            restTemplate.getForObject("https://www.amazon.com", String.class);
             return Health.up().build();
         } catch (Exception e) {
             return Health.down().withDetail("reason", e.getMessage()).build();

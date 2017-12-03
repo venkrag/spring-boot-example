@@ -42,6 +42,8 @@ public class ShipwreckController {
 
     @RequestMapping(value="shipwrecks/{id}", method = RequestMethod.PUT)
     public Shipwreck get(@PathVariable Long id, @RequestBody Shipwreck shipwreck ) {
+        counterService.increment("update.shipwrecks");
+        gaugeService.submit("update.last.shipwrecks", System.currentTimeMillis());
         return ShipwreckStub.update(id, shipwreck);
 
     }
