@@ -21,4 +21,9 @@ public class BootApplicationTest {
         String result = hc.home();
         assertSame(result,"Welcome to the Spring Boot Session");
     }
+
+    @Test
+    public void contextLoads() {
+        //that the application context loads successfully.
+    }
 }
